@@ -180,25 +180,25 @@
          </div>
        </div>
 
-      <form method="post" action="form.php">
+      <form method="post" action="form.php" name="PSDKU-Contact">
         <div class="mb-3 row">
           <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputPassword" placeholder="Masukkan Email">
+            <input type="email" class="form-control" id="inputPassword" placeholder="Masukkan Email" name="email">
           </div>
         </div>
       
       <div class="mb-3 row">
           <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Masukkan Password">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Masukkan Password" name="password">
           </div>
         </div>
 
       <div class="mb-3 row">
           <label for="inputPassword" class="col-sm-2 col-form-label">Komentar</label>
           <div class="col-sm-10">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Komentar"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Masukkan Komentar" name="pesan"></textarea>
           </div>
         </div>
       <div class="ms-auto" style="float: right;">
@@ -218,5 +218,18 @@
 <!-- Akhir Footer -->
     
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwigGvrosBYNWah14ojUJ85pSxttPuOBCkUKAwPeQUG99j6ymC-YD7WbeMkL_TACBxqLw/exec'
+  const form = document.forms['PSDKU-Contact']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
   </body>
 </html>
