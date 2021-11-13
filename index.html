@@ -180,6 +180,11 @@
          </div>
        </div>
 
+       <div class="alert alert-primary alert-dismissible fade show d-none my-alert" role="alert">
+  <strong>Terimakasih!</strong> Pesan Anda Sudah Terkirim
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
       <form name="PSDKU-Contact">
         <div class="mb-3 row">
           <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
@@ -202,7 +207,12 @@
           </div>
         </div>
       <div class="ms-auto" style="float: right;">
-    <button type="submit" class="btn btn-success">Kirim</button>
+    <button type="submit" class="btn btn-success btn-kirim">Kirim</button>
+
+    <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
       </form>
       
   </div>
@@ -223,11 +233,25 @@
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwigGvrosBYNWah14ojUJ85pSxttPuOBCkUKAwPeQUG99j6ymC-YD7WbeMkL_TACBxqLw/exec'
   const form = document.forms['PSDKU-Contact']
+  const btnKirim = document.querySelector('.btn-kirim');
+  const btnLoading = document.querySelector('.btn-loading');
+  const myalert = document.querySelector('.my-alert');
 
   form.addEventListener('submit', e => {
     e.preventDefault()
+
+    // hilangkan tombol kirim dan munculkan tombol loading
+    btnLoading.classList.toggle('d-none');
+    btnKirim.classList.toggle('d-none');
+
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
+      .then(response => {
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        myalert.classList.toggle('d-none');
+        form.reset();
+        console.log('Success!', response)
+      })
       .catch(error => console.error('Error!', error.message))
   })
 </script>
