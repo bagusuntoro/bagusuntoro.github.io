@@ -32,3 +32,7 @@ footer {
 .kuning {
   color: #dab616;
 }
+
+.navbar{
+  border-radius:0 0 20px 20px;
+}
