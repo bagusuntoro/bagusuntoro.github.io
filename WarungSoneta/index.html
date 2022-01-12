@@ -32,7 +32,7 @@
         <nav class="teal darken-2">
             <div class="container">
                 <div class="nav-wrapper">
-                  <a href="#!" class="brand-logo">SoNeTa</a>
+                  <a href="#home" class="brand-logo">SoNeTa</a>
                   <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                   <ul class="right hide-on-med-and-down">
                     <li><a href="#about">Tentang Kami</a></li>
@@ -63,7 +63,7 @@
 
 
     <!-- slider -->
-    <div class="slider">
+    <div class="slider scrollspy" id="home">
         <ul class="slides s12">
             <li>
                 <img src="img/slider/WS.png">
@@ -261,21 +261,25 @@
                                 <label for="name">Name</label>
                             </div>
                             <div class="input-field">
-                                <input type="text" name="phone" id="phone">
+                                <input type="tel" name="phone" id="phone" required class="validate">
                                 <label for="phone">Phone Number</label>
                             </div>
                             <div class="input-field">
-                                <textarea name="message" id="message" class="materialize-textarea"></textarea>
+                                <textarea name="message" id="message" class="materialize-textarea" required class="validate"></textarea>
                                 <label for="message">Alamat</label>
                             </div>
                             <div class="input-field">
-                                <select>
+                                <select required class="validate">
                                   <option value="" disabled selected>----- Menu -----</option>
                                   <option value="1">Kaldu Daging Madura</option>
                                   <option value="2">Soto Ayam Madura</option>
                                   <option value="3">Sate Ayam Madura</option>
                                 </select>
                                 <label>Masukkan Pesanan Anda</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" name="jumlah" id="jumlah" required class="validate">
+                                <label for="jumlah">Jumlah Pesanan</label>
                             </div>
                             <button type="submit" class="btn teal darken-2">Pesan</button>
                         </div>
