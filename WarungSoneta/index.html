@@ -12,6 +12,10 @@
     <!-- iconBootstrap -->
 
 
+    <!-- iconCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- iconCSS -->
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Akhir Google Fonts -->
@@ -255,27 +259,27 @@
                 </div>
 
                 <div class="col m7 s12">
-                    <form>
+                    <form name="warungSoneta">
                         <div class="card-panel">
                             <h5>Harap isi dengan benar</h5>
                             <div class="input-field">
-                                <input type="text" name="name" id="name" required class="validate">
-                                <label for="name">Name</label>
+                                <input type="text" name="nama" id="name" required class="validate">
+                                <label for="name">Nama Lengkap</label>
                             </div>
                             <div class="input-field">
                                 <input type="tel" name="phone" id="phone" required class="validate">
-                                <label for="phone">Phone Number</label>
+                                <label for="phone">No. Hp</label>
                             </div>
                             <div class="input-field">
-                                <textarea name="message" id="message" class="materialize-textarea" required class="validate"></textarea>
-                                <label for="message">Alamat</label>
+                                <textarea name="alamat" id="message" class="materialize-textarea" required class="validate"></textarea>
+                                <label for="message">Alamat Lengkap</label>
                             </div>
                             <div class="input-field">
-                                <select required class="validate">
+                                <select required class="validate" name="pesanan">
                                   <option value="" disabled selected>----- Menu -----</option>
-                                  <option value="1">Kaldu Daging Madura</option>
-                                  <option value="2">Soto Ayam Madura</option>
-                                  <option value="3">Sate Ayam Madura</option>
+                                  <option value="Kaldu">Kaldu Daging Madura</option>
+                                  <option value="Soto">Soto Ayam Madura</option>
+                                  <option value="Sate">Sate Daging Madura</option>
                                 </select>
                                 <label>Masukkan Pesanan Anda</label>
                             </div>
@@ -283,7 +287,14 @@
                                 <input type="number" name="jumlah" id="jumlah" required class="validate">
                                 <label for="jumlah">Jumlah Pesanan</label>
                             </div>
-                            <button type="submit" class="btn teal darken-2">Pesan</button>
+                            <button type="submit" class="btn teal darken-2 pesan">Pesan<i class="material-icons right">send</i></button>
+
+                            <!-- animasi -->
+                            <button type="submit" class="btn teal lighten-1 loding hilang">
+                                <i class="fa fa-refresh fa-spin"></i> Loading
+                            </button>
+                            <!-- animasi -->
+
                         </div>
                     </form>
                 </div>
@@ -381,6 +392,42 @@
     
     </script>
     <!-- myJS -->
+
+
+
+
+    <!-- GSheet -->
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwJkwtS3HKmbfqlrCk54sKrkhV817rgKpKe9a1Ll5v-uIer4u3p6NqJZL3pm4KTtTloLg/exec'
+        const form = document.forms['warungSoneta']
+        const pesan = document.querySelector('.pesan');
+        const loding = document.querySelector('.loding');
+
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+
+        // ketika submit di klik
+        // tampil loding, hilangkan tombol pesan
+        loding.classList.toggle('hilang');
+        pesan.classList.toggle('hilang');
+
+        
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                // tampil pesan, hilangkan tombol loding
+                loding.classList.toggle('hilang');
+                pesan.classList.toggle('hilang');
+                // alert
+                alert('Terimakasih! Pesanan Anda Sudah Terkirim');
+                // reset form
+                form.reset();
+                console.log('Success!', response)
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    <!-- GSheet -->
 
 </body>
 </html>
