@@ -26,6 +26,9 @@ section, footer{
     color: black;
 } */
 
+.bold{
+    font-weight: bold;
+}
 
 /* animasi */
 .hilang{
