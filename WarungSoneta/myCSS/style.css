@@ -35,3 +35,11 @@ section, footer{
     display: none;
 }
 /* animasi */
+
+
+.harga, .diskon{
+    font-size: 13px;
+}
+.harga{
+    color: #888686;
+}
