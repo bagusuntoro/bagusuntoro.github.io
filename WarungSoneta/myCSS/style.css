@@ -2,7 +2,7 @@
     text-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
 }
 
-.slider img{
+.slider img.brightness{
     filter: brightness(60%);
     opacity: 0.7 !important;
 }
