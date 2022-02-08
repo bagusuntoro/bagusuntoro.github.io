@@ -11,7 +11,13 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-position: 0 -30px;
+    filter: brightness(90%);
+    opacity: 0.8 !important;
     /* overflow: hidden; */
+}
+.jumbotron h1 p{
+    filter: brightness(100%);
+    opacity: 1 !important;
 }
 
 .kal h1, .kal p{
