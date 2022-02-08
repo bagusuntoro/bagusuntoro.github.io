@@ -1,0 +1,46 @@
+html{
+    position: relative;
+}
+
+body{
+    margin-bottom: 150px;
+}
+.jumbotron{
+    height: 540px;
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0 -30px;
+    /* overflow: hidden; */
+}
+
+.kal h1, .kal p{
+    color: #362424;
+}
+
+.upload{
+    background-color: #dfdddd;
+}
+
+p.merah{
+    color: #c71f1f;
+}
+
+
+footer{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+    background-color: #333;
+    padding-top: 30px;
+}
+
+footer p{
+    color: #aaa;
+    font-size: 1em;
+}
+
+footer p i{
+    color: salmon;
+}
