@@ -1,0 +1,40 @@
+footer{
+    height: 150px;
+    background-color: #000000;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+p.footer{
+    color: white;
+}
+
+.harga, .potong, .diskon{
+    font-weight: bold;
+}
+
+.harga{
+    color: #e25151;
+}
+
+.potong{
+    color: #646464;
+}
+
+
+.diskon{
+    color: #e25151;
+}
+
+
+/* tampilan laptop */
+@media (min-width: 1200px) {
+    .slider{
+        height: 500px;
+    }
+    .about{
+        padding-top: 20px;
+    }
+    .layanan{
+        margin-top: -230px;
+    }
+}
