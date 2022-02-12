@@ -25,6 +25,22 @@ p.footer{
     color: #e25151;
 }
 
+.about{
+    padding-top: 20px;
+}
+.layanan{
+    padding-top: 20px;
+}
+.menu{
+    padding-top: 20px;
+}
+.galeri{
+    padding-top: 20px;
+}
+.pesan{
+    padding-top: 20px;
+}
+
 
 /* tampilan laptop */
 @media (min-width: 1200px) {
