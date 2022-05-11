@@ -31,7 +31,7 @@ function openNav() {
 
 
   // ubah warna
-  document.body.addEventListener('mousemove', function () {
+  document.body.addEventListener('click', function () {
     const sumbuX = Math.round((event.clientX / window.innerWidth) * 255);
     const sumbuY = Math.round((event.clientY / window.innerHeight) * 255);
     document.body.style.backgroundColor = 'rgb(' + sumbuX + ',' + sumbuY + ',100)';

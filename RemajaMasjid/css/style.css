@@ -194,12 +194,14 @@ body {
     /* loading */
     a.scanner{
       color:#252839;
-      /* font-size:20px; */
       position:absolute;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
       }
       
       a.scanner:before{
-      content:"BagusUntoro.";
+      content:"Remaja_Masjid_AL_Amin_Karanganyar";
       position:absolute;
       top:0;
       left:0;
@@ -259,14 +261,20 @@ body {
   }
 
   footer{
+    width: 100%;
     height: 200px;
     background: #000;
     color: #3a3a3a;
   }
   a.bagus{
     text-decoration: none;
-    /* color: #ec930e; */
+    color: #ec5f0e;
   }
+
+  .coba{
+    padding-left: 35%;
+  }
+
 
 
 
@@ -293,14 +301,15 @@ body {
       background-image: url('../img/bg-mobile.avif');
       background-size: cover;
     }
-  }
 
+    a.scanner{
+      font-size: 15px;
+    }
 
-
-  
-  /* laptop */
-  @media (min-width: 1200px) {
-    .mobhilang{
-      display: none;
+    .coba{
+      padding-left: 30px;
     }
   }
+
+
+
