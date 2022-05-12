@@ -212,6 +212,10 @@ body {
       color:#ffc917;
       animation:load 4s linear infinite;
       }
+
+      .coba{
+        padding-left: 35%;
+      }
       
       @keyframes load{
       0%,10%,100%{
@@ -271,11 +275,59 @@ body {
     color: #ec5f0e;
   }
 
-  .coba{
-    padding-left: 35%;
-  }
 
 
+  .ikon {
+    color: #fff;
+    animation: first_color .5s ease-in-out infinite alternate;
+    display: block;
+    padding-left: 10px;
+}
+
+
+.ikon:nth-child(2) {
+    animation-name: second_color;
+}
+
+.ikon:nth-child(3) {
+    animation-name: third_color;
+}
+
+@keyframes first_color {
+    0% {
+        text-shadow: 0 0 10px #ff1177,
+            0 0 20px #d6249f, 0 0 30px #285AEB
+    }
+
+    100% {
+        text-shadow: 0 0 5px #ff1177,
+            0 0 10px #d6249f, 0 0 15px #285AEB
+    }
+}
+
+@keyframes second_color {
+    0% {
+        text-shadow: 0 0 10px #1877f2,
+            0 0 20px #1459b3, 0 0 30px #179bff
+    }
+
+    100% {
+        text-shadow: 0 0 5px #1877f2,
+            0 0 10px #1459b3, 0 0 15px #179bff
+    }
+}
+
+@keyframes third_color {
+    0% {
+        text-shadow: 0 0 10px #25d366,
+            0 0 20px #48ee85, 0 0 30px #0ec0a5
+    }
+
+    100% {
+        text-shadow: 0 0 5px #25d366,
+            0 0 10px #48ee85, 0 0 15px #0ec0a5
+    }
+}
 
 
 
