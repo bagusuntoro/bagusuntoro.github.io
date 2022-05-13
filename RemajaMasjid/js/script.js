@@ -5,7 +5,7 @@ function openNav() {
     lebar.style.width = "250px";
 
     if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      document.getElementById("mySidenav").style.width = "300px";
+      document.getElementById("mySidenav").style.width = "200px";
       document.getElementById("content").style.marginLeft="0";
     }else{
       document.getElementById("content").style.marginLeft="250px";
