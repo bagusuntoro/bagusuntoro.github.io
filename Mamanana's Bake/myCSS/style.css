@@ -1,0 +1,74 @@
+.slider h3,
+.slider h5,
+.clients h3 {
+    text-shadow: 2px 2px 10px rgba(241, 30, 30, 0.5);
+}
+
+.slider img.brightness {
+    filter: brightness(60%);
+    opacity: 0.7 !important;
+}
+
+
+.parallax-container {
+    height: 20%;
+}
+
+.parallax img {
+    filter: grayscale(1);
+    opacity: 0.5 !important;
+}
+
+.clients img {
+    max-width: 150px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+}
+
+section,
+footer {
+    padding: 20px 0;
+}
+
+/* .nMenu h5{
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, .5);
+    font-weight: bold;
+    color: black;
+} */
+
+.bold {
+    font-weight: bold;
+}
+
+/* animasi */
+.hilang {
+    display: none;
+}
+
+/* animasi */
+
+
+.harga,
+.diskon {
+    font-size: 13px;
+}
+
+.harga {
+    color: #888686;
+}
+
+/* breaknest */
+
+
+
+@media only screen and (min-width: 900px) {
+    .bannerForAndroid {
+        display: none;
+        /* background-image: url("img/slider/bannerDesktop.png"); */
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .bannerForDesktop {
+        display: none;
+    }
+}
