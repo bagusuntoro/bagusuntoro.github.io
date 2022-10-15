@@ -23,6 +23,10 @@ body {
     opacity: 0.5 !important;
 }
 
+.customImg {
+    height: 250px !important;
+    width: 200px;
+}
 
 .clients img {
     max-width: 150px;
