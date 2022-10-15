@@ -24,10 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// const scrol = document.querySelectorAll('.scrollspy');
-// M.Scrollspy.init(scrol, {
-//   scrollOffset: 50
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
   var select = document.querySelectorAll('select');
