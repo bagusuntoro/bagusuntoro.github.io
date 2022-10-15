@@ -29,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- mycss -->
-    <link rel="stylesheet" href="myCSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- icon -->
     <link rel="shortcut icon" href="img/icon/icon.jpg">
@@ -42,7 +42,7 @@
         <nav class="amber lighten-1">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="#home" class="brand-logo">Bake</a>
+                    <a href="#home" class="brand-logo">Mamanana's Bake</a>
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#about">Tentang Kami</a></li>
@@ -132,15 +132,15 @@
                 <div class="col m6 s12 light">
                     <p>Brownies Legit</p>
                     <div class="progress">
-                        <div class="determinate" style="width: 90%;"></div>
+                        <div class="determinate amber lighten-1" style="width: 90%;"></div>
                     </div>
                     <p>Lekker Hollad</p>
                     <div class="progress">
-                        <div class="determinate" style="width: 70%;"></div>
+                        <div class="determinate amber lighten-1" style="width: 70%;"></div>
                     </div>
                     <p>Basque Burnt Cheesecake</p>
                     <div class="progress">
-                        <div class="determinate" style="width: 97%;"></div>
+                        <div class="determinate amber lighten-1" style="width: 97%;"></div>
                     </div>
                 </div>
             </div>
@@ -380,9 +380,9 @@
                             <div class="input-field">
                                 <select required class="validate" name="pesanan">
                                     <option value="" disabled selected>----- Menu -----</option>
-                                    <option value="Kaldu">Brownies Legit</option>
-                                    <option value="Soto">Lekker Holland</option>
-                                    <option value="Sate">Basque Burnt Cheesecake</option>
+                                    <option value="Brownies Legit">Brownies Legit</option>
+                                    <option value="Lekker Holland">Lekker Holland</option>
+                                    <option value="Basque Burnt Cheesecake">Basque Burnt Cheesecake</option>
                                 </select>
                                 <label>Masukkan Pesanan Anda</label>
                             </div>
@@ -439,86 +439,8 @@
     <!-- Akhir Materialize JS -->
 
 
-
-    <!-- myJS -->
-    <script>
-        const sideNav = document.querySelectorAll('.sidenav');
-        M.Sidenav.init(sideNav);
-
-        const slider = document.querySelectorAll('.slider');
-        M.Slider.init(slider, {
-            indicators: false,
-            height: 500,
-            transition: 600,
-            interval: 4000
-        });
-
-        const parallax = document.querySelectorAll('.parallax');
-        M.Parallax.init(parallax);
-
-
-        const materialbox = document.querySelectorAll('.materialboxed');
-        M.Materialbox.init(materialbox);
-
-
-        // const scrol = document.querySelectorAll('.scrollspy');
-        // M.Scrollspy.init(scrol, {
-        //     scrollOffset: 50
-        // });
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.scrollspy');
-            var instances = M.ScrollSpy.init(elems, {
-                scrollOffset: 50
-            });
-        });
-
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var select = document.querySelectorAll('select');
-            var instances = M.FormSelect.init(select);
-        });
-
-    </script>
-    <!-- myJS -->
-
-
-
-
-    <!-- GSheet -->
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwJkwtS3HKmbfqlrCk54sKrkhV817rgKpKe9a1Ll5v-uIer4u3p6NqJZL3pm4KTtTloLg/exec'
-        const form = document.forms['warungSoneta']
-        const pesan = document.querySelector('.pesan');
-        const loding = document.querySelector('.loding');
-
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-
-            // ketika submit di klik
-            // tampil loding, hilangkan tombol pesan
-            loding.classList.toggle('hilang');
-            pesan.classList.toggle('hilang');
-
-
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    // tampil pesan, hilangkan tombol loding
-                    loding.classList.toggle('hilang');
-                    pesan.classList.toggle('hilang');
-                    // alert
-                    alert('Terimakasih! Pesanan Anda Sedang Diproses');
-                    // reset form
-                    form.reset();
-                    console.log('Success!', response)
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
-    <!-- GSheet -->
+    <!-- my js -->
+    <script src="js/script.js"></script>
 
 </body>
 
