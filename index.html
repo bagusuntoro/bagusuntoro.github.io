@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +13,7 @@
       background: linear-gradient(120deg, #e0eafc, #cfdef3);
       color: #333;
     }
+
     header {
       background: linear-gradient(120deg, #1a73e8, #4285f4);
       color: white;
@@ -19,53 +21,63 @@
       text-align: center;
       position: relative;
     }
+
     .profile-img {
       width: 130px;
       height: 130px;
       border-radius: 50%;
       border: 4px solid white;
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       margin-bottom: 1rem;
     }
+
     h1 {
       font-size: 2.8rem;
       margin-top: 0.5rem;
     }
+
     section {
       max-width: 1100px;
       margin: 2rem auto;
       background: white;
       border-radius: 15px;
       padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
+
     h2 {
       border-left: 5px solid #1a73e8;
       padding-left: 0.75rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
     }
+
     ul li {
       margin-bottom: 0.75rem;
     }
+
     .card {
       border: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-5px);
     }
+
     .card-img-top {
       height: 180px;
       object-fit: cover;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
     }
+
     .card-body {
       padding: 1.25rem;
     }
+
     footer {
       background: #1a73e8;
       color: white;
@@ -75,6 +87,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <img src="img/profile.png" alt="Foto Bagus Untoro" class="profile-img">
@@ -85,109 +98,121 @@
   <main class="container-fluid px-3 px-md-5">
     <section id="summary">
       <h2>Summary</h2>
-      <p>I am an IT Leader with a versatile technical foundation spanning full‑stack, backend, frontend web and mobile development, UI/UX design, system and data analysis, and tech education.</p>
+      <p>I am an IT Leader with a versatile technical foundation spanning full‑stack, backend, frontend web and mobile
+        development, UI/UX design, system and data analysis, and tech education.</p>
     </section>
 
     <section id="experience">
-  <h2>Experience</h2>
-  <div class="accordion" id="experienceAccordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          PT Instinc Technology Solution – IT Lead (Mar 2024 - Now)
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#experienceAccordion">
-        <div class="accordion-body">
-          <ul>
-            <li>Led a cross-functional team of developers, designers, and QA engineers in an Agile environment, improving team productivity by 20% and reducing project delays by 15%.</li>
-            <li>Designed and implemented scalable, secure, and high-performance system architectures, enhancing performance by 30%.</li>
-            <li>Streamlined Agile projects, reducing delivery times by 25%.</li>
-            <li>Mentored junior developers, increasing morale and improving code quality.</li>
-          </ul>
-          <strong>Key Achievements:</strong>
-          <ul>
-            <li>Transitioned from MVC to Service Repository Pattern for better maintainability.</li>
-            <li>Successfully migrated data with 100% integrity from legacy systems.</li>
-            <li>Achieved 95% on-time project delivery with high user satisfaction.</li>
-          </ul>
+      <h2>Experience</h2>
+      <div class="accordion" id="experienceAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              PT Instinc Technology Solution – IT Lead (Mar 2024 - Now)
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#experienceAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>Led a cross-functional team of developers, designers, and QA engineers in an Agile environment,
+                  improving team productivity by 20% and reducing project delays by 15%.</li>
+                <li>Designed and implemented scalable, secure, and high-performance system architectures, enhancing
+                  performance by 30%.</li>
+                <li>Streamlined Agile projects, reducing delivery times by 25%.</li>
+                <li>Mentored junior developers, increasing morale and improving code quality.</li>
+              </ul>
+              <strong>Key Achievements:</strong>
+              <ul>
+                <li>Transitioned from MVC to Service Repository Pattern for better maintainability.</li>
+                <li>Successfully migrated data with 100% integrity from legacy systems.</li>
+                <li>Achieved 95% on-time project delivery with high user satisfaction.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          SMK Annuqayah – Tech Educator (Jan 2024 - Now)
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#experienceAccordion">
-        <div class="accordion-body">
-          <ul>
-            <li>Taught hands-on lessons in TLJ (network services), boosting student technical proficiency by 30%.</li>
-            <li>Managed 20–30 students per class with 20% improvement in engagement and completion.</li>
-            <li>Developed real-world projects; 70% of students placed in internships or jobs.</li>
-            <li>Guided students on portfolio/career paths; 60% entered higher education in IT.</li>
-          </ul>
-          <strong>Key Achievements:</strong>
-          <ul>
-            <li>Improved performance in TLJ by 30%.</li>
-            <li>Boosted engagement and completion rates by 20%.</li>
-            <li>70% of students secured internships or tech jobs; 60% pursued higher education.</li>
-          </ul>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              SMK Annuqayah – Tech Educator (Jan 2024 - Now)
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#experienceAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>Taught hands-on lessons in TLJ (network services), boosting student technical proficiency by 30%.
+                </li>
+                <li>Managed 20–30 students per class with 20% improvement in engagement and completion.</li>
+                <li>Developed real-world projects; 70% of students placed in internships or jobs.</li>
+                <li>Guided students on portfolio/career paths; 60% entered higher education in IT.</li>
+              </ul>
+              <strong>Key Achievements:</strong>
+              <ul>
+                <li>Improved performance in TLJ by 30%.</li>
+                <li>Boosted engagement and completion rates by 20%.</li>
+                <li>70% of students secured internships or tech jobs; 60% pursued higher education.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Disparekraf DKI Jakarta – Data Analyst (Jun 2024 - Nov 2024)
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#experienceAccordion">
-        <div class="accordion-body">
-          <ul>
-            <li>Analyzed large-scale survey data on tourism behavior and trends.</li>
-            <li>Processed and organized raw data for clean, accurate insights.</li>
-            <li>Developed dashboards and visual reports for stakeholders.</li>
-            <li>Collaborated with field teams and government reps to validate data.</li>
-          </ul>
-          <strong>Key Achievements:</strong>
-          <ul>
-            <li>Delivered strategic analytical reports that guided tourism planning.</li>
-            <li>Accelerated insight delivery through workflow optimization.</li>
-          </ul>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Disparekraf DKI Jakarta – Data Analyst (Jun 2024 - Nov 2024)
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#experienceAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>Analyzed large-scale survey data on tourism behavior and trends.</li>
+                <li>Processed and organized raw data for clean, accurate insights.</li>
+                <li>Developed dashboards and visual reports for stakeholders.</li>
+                <li>Collaborated with field teams and government reps to validate data.</li>
+              </ul>
+              <strong>Key Achievements:</strong>
+              <ul>
+                <li>Delivered strategic analytical reports that guided tourism planning.</li>
+                <li>Accelerated insight delivery through workflow optimization.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFour">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          Lumira Software House – Fullstack Developer (May 2023 - Mar 2024)
-        </button>
-      </h2>
-      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#experienceAccordion">
-        <div class="accordion-body">
-          <ul>
-            <li>Built scalable server-side apps, increasing system performance by 30%.</li>
-            <li>Developed responsive UIs with Vue.js, boosting engagement by 25%.</li>
-            <li>Created cross-platform mobile apps with 20% increase in downloads.</li>
-            <li>Improved database performance and security compliance.</li>
-            <li>Led full deployment process with <1% downtime and 10 successful projects.</li>
-          </ul>
-          <strong>Key Achievements:</strong>
-          <ul>
-            <li>Refactored backend for 30% faster response times.</li>
-            <li>Enhanced user retention via mobile performance tuning.</li>
-            <li>Boosted database efficiency by 50% through optimization and security.</li>
-          </ul>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Lumira Software House – Fullstack Developer (May 2023 - Mar 2024)
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#experienceAccordion">
+            <div class="accordion-body">
+              <ul>
+                <li>Built scalable server-side apps, increasing system performance by 30%.</li>
+                <li>Developed responsive UIs with Vue.js, boosting engagement by 25%.</li>
+                <li>Created cross-platform mobile apps with 20% increase in downloads.</li>
+                <li>Improved database performance and security compliance.</li>
+                <li>Led full deployment process with <1% downtime and 10 successful projects.</li>
+              </ul>
+              <strong>Key Achievements:</strong>
+              <ul>
+                <li>Refactored backend for 30% faster response times.</li>
+                <li>Enhanced user retention via mobile performance tuning.</li>
+                <li>Boosted database efficiency by 50% through optimization and security.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="education">
       <h2>Education</h2>
@@ -201,12 +226,26 @@
     <section id="certification">
       <h2>Certification</h2>
       <ul>
-        <li>Junior Web Developer – BNSP (2022)</li>
-        <li>Junior Mobile Developer – BNSP (2023)</li>
-        <li>AWS Cloud Engineer – DTS (2022)</li>
-        <li>React JS – IDCAMP (2023)</li>
+        <li>Junior Web Developer – BNSP (Badan Nasional Sertifikasi Profesi) 2022</li>
+        <li>Junior Mobile Developer – BNSP (Badan Nasional Sertifikasi Profesi) 2023</li>
+        <li>Web Developer – BNSP (Badan Nasional Sertifikasi Profesi) 2023</li>
+        <li>Bootcamp Frontend Developer – PT. Inosoft Trans Sistem 2022</li>
+        <li>Bootcamp Backend Developer – PT. Inosoft Trans Sistem 2023</li>
+        <li>AWS Cloud Engineer – Digital Talent Scholarship 2022</li>
+        <li>Machine Learning – Digital Talent Scholarship 2022</li>
+        <li>Junior Web Developer – Digital Talent Scholarship 2022</li>
+        <li>Junior Mobile Developer – Digital Talent Scholarship 2023</li>
+        <li>Web Developer – Indosat Ooredoo (IDCAMP) 2022</li>
+        <li>React JS – Indosat Ooredoo (IDCAMP) 2023</li>
+        <li>Machine Learning – Indosat Ooredoo (IDCAMP) 2023</li>
+        <li>Google IT Support – YPII (Yayasan Plan International Indonesia) 2022</li>
+        <li>Fullstack Developer – Surabaya Webtech 2023</li>
+        <li>Frontend Developer – Empower 2023</li>
+        <li>Digital Nation Ambassador – Daily Social 2023</li>
+        <li>Wirausaha Merdeka – Kampus Merdeka 2023</li>
       </ul>
     </section>
+
 
     <section id="awards">
       <h2>Awards</h2>
@@ -225,28 +264,30 @@
     </section>
 
     <section id="seminars">
-  <h2>Seminars & Webinars</h2>
-  <div class="row g-4">
-    <div class="col-md-6">
-      <div class="card h-100">
-        <img src="images/seminar-uniba.jpg" class="card-img-top" alt="Seminar Uniba Madura">
-        <div class="card-body">
-          <h5 class="card-title">Innovation and Economic Opportunities in Business Digitalization</h5>
-          <p class="card-text">Speaker at seminar organized by Uniba Madura & Mambaul Hikmah Islamic Boarding School.</p>
+      <h2>Seminars & Webinars</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <img src="images/seminar-uniba.jpg" class="card-img-top" alt="Seminar Uniba Madura">
+            <div class="card-body">
+              <h5 class="card-title">Innovation and Economic Opportunities in Business Digitalization</h5>
+              <p class="card-text">Speaker at seminar organized by Uniba Madura & Mambaul Hikmah Islamic Boarding
+                School.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <img src="img/seminar/imsii.jpeg" class="card-img-top" alt="Webinar IMSII">
+            <div class="card-body">
+              <h5 class="card-title">Learning Data Analytics: From Zero to Hero</h5>
+              <p class="card-text">Speaker at webinar organized by IMSII (Indonesian Association of Information Systems
+                Students).</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <img src="images/seminar-imsii.jpg" class="card-img-top" alt="Webinar IMSII">
-        <div class="card-body">
-          <h5 class="card-title">Learning Data Analytics: From Zero to Hero</h5>
-          <p class="card-text">Speaker at webinar organized by IMSII (Indonesian Association of Information Systems Students).</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="skills">
       <h2>Skills</h2>
@@ -279,145 +320,147 @@
     </section>
 
     <section id="applications">
-  <h2>Applications Created</h2>
-  <div class="row g-4">
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/garamina.jpg" class="card-img-top" alt="Garamina">
-        <div class="card-body">
-          <h5 class="card-title">Garamina Mobile</h5>
-          <p class="card-text">Attendance app with real-time location, fake GPS detection, and one-account-per-device policy.</p>
+      <h2>Applications Created</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="img/apps/garamina.png" class="card-img-top" alt="Garamina">
+            <div class="card-body">
+              <h5 class="card-title">Garamina Mobile</h5>
+              <p class="card-text">Attendance app with real-time location, fake GPS detection, and
+                one-account-per-device policy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/paten.jpg" class="card-img-top" alt="Paten">
+            <div class="card-body">
+              <h5 class="card-title">Paten</h5>
+              <p class="card-text">Mobile application for fast vote counting in the 2024 election.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="img/apps/tallysheet.jpg" class="card-img-top" alt="Tally Sheet">
+            <div class="card-body">
+              <h5 class="card-title">Tally Sheet</h5>
+              <p class="card-text">Application for recording the movement of goods efficiently.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/hmiconnect.jpg" class="card-img-top" alt="HMI Connect">
+            <div class="card-body">
+              <h5 class="card-title">HMI Connect</h5>
+              <p class="card-text">Multi-platform app for HMI member management (web, Android, iOS).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="img/apps/survei.png" class="card-img-top" alt="Survey App">
+            <div class="card-body">
+              <h5 class="card-title">Survey App</h5>
+              <p class="card-text">Survey app for tourist attractions by Disparekraf DKI Jakarta.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/evoting.jpg" class="card-img-top" alt="E-Voting">
+            <div class="card-body">
+              <h5 class="card-title">E-Voting</h5>
+              <p class="card-text">Multi-platform voting app using blockchain (web, Android, iOS).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/smkabsensi.jpg" class="card-img-top" alt="SMK Absensi">
+            <div class="card-body">
+              <h5 class="card-title">SMK Absensi</h5>
+              <p class="card-text">Mobile-based attendance app for vocational schools.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/fptifinance.jpg" class="card-img-top" alt="FPTI Finance">
+            <div class="card-body">
+              <h5 class="card-title">FPTI Finance</h5>
+              <p class="card-text">Financial app for FPTI (Federasi Panjat Tebing Indonesia).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/baba.jpg" class="card-img-top" alt="Baba">
+            <div class="card-body">
+              <h5 class="card-title">Baba</h5>
+              <p class="card-text">PPOB app for credit, data, electricity, PDAM, BPJS, games, and more.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/vivacosmetic.jpg" class="card-img-top" alt="Viva Cosmetic">
+            <div class="card-body">
+              <h5 class="card-title">E-commerce Viva Cosmetic</h5>
+              <p class="card-text">E-commerce platform for selling Viva cosmetic products.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="img/apps/alicorn.png" class="card-img-top" alt="Alicornbot">
+            <div class="card-body">
+              <h5 class="card-title">Alicornbot</h5>
+              <p class="card-text">Membership robot trader app with performance tracking.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/ketongbaca.jpg" class="card-img-top" alt="Ketong Baca">
+            <div class="card-body">
+              <h5 class="card-title">Ketong Baca</h5>
+              <p class="card-text">Reading module app for students (web and mobile).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/siappbapenda.jpg" class="card-img-top" alt="Siapp Bapenda">
+            <div class="card-body">
+              <h5 class="card-title">Siapp Bapenda</h5>
+              <p class="card-text">Mobile taxation application for BAPENDA JATIM.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="img/apps/sms.png" class="card-img-top" alt="SMS">
+            <div class="card-body">
+              <h5 class="card-title">Security Management System (SMS)</h5>
+              <p class="card-text">Used at Indonesian Air Force HQ (Mabes TNI AU) for integrated security management.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="images/amitie.jpg" class="card-img-top" alt="Amitie">
+            <div class="card-body">
+              <h5 class="card-title">Amitie</h5>
+              <p class="card-text">Vehicle tax payment agency application with reminder and tracking features.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/paten.jpg" class="card-img-top" alt="Paten">
-        <div class="card-body">
-          <h5 class="card-title">Paten</h5>
-          <p class="card-text">Mobile application for fast vote counting in the 2024 election.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/tallysheet.jpg" class="card-img-top" alt="Tally Sheet">
-        <div class="card-body">
-          <h5 class="card-title">Tally Sheet</h5>
-          <p class="card-text">Application for recording the movement of goods efficiently.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/hmiconnect.jpg" class="card-img-top" alt="HMI Connect">
-        <div class="card-body">
-          <h5 class="card-title">HMI Connect</h5>
-          <p class="card-text">Multi-platform app for HMI member management (web, Android, iOS).</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/survey.jpg" class="card-img-top" alt="Survey App">
-        <div class="card-body">
-          <h5 class="card-title">Survey App</h5>
-          <p class="card-text">Survey app for tourist attractions by Disparekraf DKI Jakarta.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/evoting.jpg" class="card-img-top" alt="E-Voting">
-        <div class="card-body">
-          <h5 class="card-title">E-Voting</h5>
-          <p class="card-text">Multi-platform voting app using blockchain (web, Android, iOS).</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/smkabsensi.jpg" class="card-img-top" alt="SMK Absensi">
-        <div class="card-body">
-          <h5 class="card-title">SMK Absensi</h5>
-          <p class="card-text">Mobile-based attendance app for vocational schools.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/fptifinance.jpg" class="card-img-top" alt="FPTI Finance">
-        <div class="card-body">
-          <h5 class="card-title">FPTI Finance</h5>
-          <p class="card-text">Financial app for FPTI (Federasi Panjat Tebing Indonesia).</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/baba.jpg" class="card-img-top" alt="Baba">
-        <div class="card-body">
-          <h5 class="card-title">Baba</h5>
-          <p class="card-text">PPOB app for credit, data, electricity, PDAM, BPJS, games, and more.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/vivacosmetic.jpg" class="card-img-top" alt="Viva Cosmetic">
-        <div class="card-body">
-          <h5 class="card-title">E-commerce Viva Cosmetic</h5>
-          <p class="card-text">E-commerce platform for selling Viva cosmetic products.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/alicornbot.jpg" class="card-img-top" alt="Alicornbot">
-        <div class="card-body">
-          <h5 class="card-title">Alicornbot</h5>
-          <p class="card-text">Membership robot trader app with performance tracking.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/ketongbaca.jpg" class="card-img-top" alt="Ketong Baca">
-        <div class="card-body">
-          <h5 class="card-title">Ketong Baca</h5>
-          <p class="card-text">Reading module app for students (web and mobile).</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/siappbapenda.jpg" class="card-img-top" alt="Siapp Bapenda">
-        <div class="card-body">
-          <h5 class="card-title">Siapp Bapenda</h5>
-          <p class="card-text">Mobile taxation application for BAPENDA JATIM.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/sms.jpg" class="card-img-top" alt="SMS">
-        <div class="card-body">
-          <h5 class="card-title">Security Management System (SMS)</h5>
-          <p class="card-text">Used at Indonesian Air Force HQ (Mabes TNI AU) for integrated security management.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="images/amitie.jpg" class="card-img-top" alt="Amitie">
-        <div class="card-body">
-          <h5 class="card-title">Amitie</h5>
-          <p class="card-text">Vehicle tax payment agency application with reminder and tracking features.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="servers">
       <h2>Servers Managed</h2>
@@ -437,4 +480,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
