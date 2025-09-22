@@ -2,491 +2,1944 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Bagus Untoro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(120deg, #e0eafc, #cfdef3);
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Bagus Untoro - IT Leader & Full-Stack Developer">
+    <meta name="keywords" content="Bagus Untoro, IT Leader, Full-Stack Developer, Web Developer, Mobile Developer">
+    <meta name="author" content="Bagus Untoro">
+    <title>Bagus Untoro - IT Leader & Full-Stack Developer</title>
 
-    header {
-      background: linear-gradient(120deg, #1a73e8, #4285f4);
-      color: white;
-      padding: 5rem 1rem 3rem;
-      text-align: center;
-      position: relative;
-    }
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .profile-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      margin-bottom: 1rem;
-    }
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --darker: #0f172a;
+            --gradient: linear-gradient(135deg, #2563eb, #10b981);
+            --text: #334155;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
 
-    h1 {
-      font-size: 2.8rem;
-      margin-top: 0.5rem;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    section {
-      max-width: 1100px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+            background-color: #f1f5f9;
+            line-height: 1.6;
+        }
 
-    h2 {
-      border-left: 5px solid #1a73e8;
-      padding-left: 0.75rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
-    ul li {
-      margin-bottom: 0.75rem;
-    }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
 
-    .card {
-      border: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease;
-    }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: 5px;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
 
-    .card-img-top {
-      height: 180px;
-      object-fit: cover;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-    }
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
 
-    .card-body {
-      padding: 1.25rem;
-    }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    footer {
-      background: #1a73e8;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-  </style>
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 8px 16px !important;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary) !important;
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--dark);
+            cursor: pointer;
+            margin-left: 10px;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 50px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .profile-img-container:hover .profile-img {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img-container::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero .lead {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50%;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            color: var(--dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Cards */
+        .custom-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .custom-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--gradient);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 25px;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        .timeline-date {
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content h4 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content h5 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 5px;
+        }
+
+        /* Skills */
+        .skill-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h4 {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 10px;
+            background: #e2e8f0;
+            overflow: visible;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            background: var(--gradient);
+            border-radius: 10px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .progress-bar::after {
+            content: attr(data-skill);
+            position: absolute;
+            right: 0;
+            top: -25px;
+            background: var(--dark);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Projects */
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .project-img i {
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h4 {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            color: var(--text);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0 5px 5px 0;
+            font-weight: 500;
+        }
+
+        /* Papers & Seminars Section */
+        .seminar-img-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .seminar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .seminar-card:hover .seminar-img {
+            transform: scale(1.05);
+        }
+
+        .seminar-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .seminar-card:hover .seminar-overlay {
+            opacity: 1;
+        }
+
+        .view-photos {
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .seminar-card:hover .view-photos {
+            transform: translateY(0);
+        }
+
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+            color: white;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .contact-info i {
+            font-size: 1.5rem;
+            margin-right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-info p {
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-circle {
+            width: 60px;
+            height: 60px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loader-text {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .navbar {
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        body.dark-mode .nav-link {
+            color: #e2e8f0 !important;
+        }
+
+        body.dark-mode .nav-link:hover, body.dark-mode .nav-link.active {
+            color: #60a5fa !important;
+            background-color: rgba(96, 165, 250, 0.1);
+        }
+
+        body.dark-mode .section-title {
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .custom-card,
+        body.dark-mode .timeline-content,
+        body.dark-mode .skill-card,
+        body.dark-mode .project-card {
+            background: #1e293b;
+            border-color: rgba(71, 85, 105, 0.5);
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .timeline-content h4,
+        body.dark-mode .skill-card h4,
+        body.dark-mode .project-content h4 {
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .timeline-content h5 {
+            color: #60a5fa;
+        }
+
+        body.dark-mode .project-content p {
+            color: #cbd5e1;
+        }
+
+        body.dark-mode .progress {
+            background: #334155;
+        }
+
+        body.dark-mode .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-mode .contact-info:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .project-tag {
+            background: rgba(96, 165, 250, 0.1);
+            color: #60a5fa;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 50px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.1rem;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                left: 0 !important;
+            }
+
+            .timeline-item::before {
+                left: 10px !important;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero .lead {
+                font-size: 1rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .hero-description {
+                padding: 20px;
+            }
+            
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                margin: 0 5px;
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-info i {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <img src="img/profile.png" alt="Foto Bagus Untoro" class="profile-img">
-    <h1>Bagus Untoro</h1>
-    <p>IT Leader | Fullstack Developer | Tech Educator</p>
-  </header>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">Memuat Portfolio...</div>
+    </div>
 
-  <main class="container-fluid px-3 px-md-5">
-    <section id="summary">
-      <h2>Summary</h2>
-      <p>I am an IT Leader with a versatile technical foundation spanning full‑stack, backend, frontend web and
-        mobile development, UI/UX design, system and data analysis, and tech education. With two years of
-        hands‑on experience, I’ve led and delivered full-spectrum projects—from planning and architecture through
-        deployment—while ensuring seamless integration, performance, and user satisfaction across platforms. My
-        strength lies in translating complex requirements into intuitive, scalable solutions, designing engaging
-        interfaces grounded in user research, and deriving actionable insights from data. In addition, I mentor peers
-        and students, sharing best practices and fostering a culture of continuous learning. Driven by a passion for
-        creative problem-solving and emerging technologies, I aim to empower teams and deliver end-to-end digital
-        experiences that generate meaningful business impact and delight users.
-      </p>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="accordion" id="experienceAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
-              PT Instinc Technology Solution – IT Lead (Mar 2024 - Now)
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bagus Untoro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#experienceAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>Led a cross-functional team of developers, designers, and QA engineers in an Agile environment,
-                  improving team productivity by 20% and reducing project delays by 15%.</li>
-                <li>Designed and implemented scalable, secure, and high-performance system architectures, enhancing
-                  performance by 30%.</li>
-                <li>Streamlined Agile projects, reducing delivery times by 25%.</li>
-                <li>Mentored junior developers, increasing morale and improving code quality.</li>
-              </ul>
-              <strong>Key Achievements:</strong>
-              <ul>
-                <li>Transitioned from MVC to Service Repository Pattern for better maintainability.</li>
-                <li>Successfully migrated data with 100% integrity from legacy systems.</li>
-                <li>Achieved 95% on-time project delivery with high user satisfaction.</li>
-              </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Pengalaman</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Keahlian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Proyek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#papers-seminars">Pengabdian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="dark-mode-toggle" id="darkModeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
+    </nav>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              SMK Annuqayah – Tech Educator (Jan 2024 - Now)
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#experienceAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>Taught hands-on lessons in TLJ (network services), boosting student technical proficiency by 30%.
-                </li>
-                <li>Managed 20–30 students per class with 20% improvement in engagement and completion.</li>
-                <li>Developed real-world projects; 70% of students placed in internships or jobs.</li>
-                <li>Guided students on portfolio/career paths; 60% entered higher education in IT.</li>
-              </ul>
-              <strong>Key Achievements:</strong>
-              <ul>
-                <li>Improved performance in TLJ by 30%.</li>
-                <li>Boosted engagement and completion rates by 20%.</li>
-                <li>70% of students secured internships or tech jobs; 60% pursued higher education.</li>
-              </ul>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 hero-content" data-aos="fade-right">
+                    <div class="profile-img-container">
+                        <img src="img/profile_jaz.png" alt="Bagus Untoro" class="profile-img">
+                    </div>
+                    <h1>Bagus Untoro</h1>
+                    <p class="lead">IT Leader | Full-Stack Web & Mobile Developer | Tech Educator</p>
+                    <div class="social-links">
+                        <a href="tel:+6281907150504"><i class="fas fa-phone"></i></a>
+                        <a href="mailto:untorobagus65@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/bagus-itdev" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-description">
+                        <h3 class="mb-4">Ringkasan Profil</h3>
+                        <p>IT Leader dengan fondasi teknis serbaguna yang mencakup full-stack, backend, frontend web dan mobile development, UI/UX design, sistem dan analisis data, serta pendidikan teknologi. Dengan pengalaman dua tahun, saya telah memimpin dan mengirimkan proyek spektrum penuh—dari perencanaan dan arsitektur hingga deployment—sekaligus memastikan integrasi, performa, dan kepuasan pengguna yang mulus di berbagai platform.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Disparekraf DKI Jakarta – Data Analyst (Jun 2024 - Nov 2024)
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#experienceAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>Analyzed large-scale survey data on tourism behavior and trends.</li>
-                <li>Processed and organized raw data for clean, accurate insights.</li>
-                <li>Developed dashboards and visual reports for stakeholders.</li>
-                <li>Collaborated with field teams and government reps to validate data.</li>
-              </ul>
-              <strong>Key Achievements:</strong>
-              <ul>
-                <li>Delivered strategic analytical reports that guided tourism planning.</li>
-                <li>Accelerated insight delivery through workflow optimization.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Lumira Software House – Fullstack Developer (May 2023 - Mar 2024)
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-            data-bs-parent="#experienceAccordion">
-            <div class="accordion-body">
-              <ul>
-                <li>Built scalable server-side apps, increasing system performance by 30%.</li>
-                <li>Developed responsive UIs with Vue.js, boosting engagement by 25%.</li>
-                <li>Created cross-platform mobile apps with 20% increase in downloads.</li>
-                <li>Improved database performance and security compliance.</li>
-                <li>Led full deployment process with <1% downtime and 10 successful projects.</li>
-              </ul>
-              <strong>Key Achievements:</strong>
-              <ul>
-                <li>Refactored backend for 30% faster response times.</li>
-                <li>Enhanced user retention via mobile performance tuning.</li>
-                <li>Boosted database efficiency by 50% through optimization and security.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li>Software Engineering – SMKN 1 Sumenep (2018–2021)</li>
-        <li>Informatics Engineering – PENS (2021–2024)</li>
-        <li>Information Systems – Universitas Terbuka (2025–Now)</li>
-      </ul>
-    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="bg-light">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Pengalaman Kerja</h2>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Maret 2024 - Juli 2025</span>
+                        <h4>IT Leader</h4>
+                        <h5>PT Instinc Technology Solution</h5>
+                        <ul>
+                            <li>Meningkatkan produktivitas tim 20% dan mengurangi keterlambatan proyek 15%</li>
+                            <li>Mengoptimalkan performa sistem hingga 30%</li>
+                            <li>Menerapkan transisi arsitektur dari MVC ke Service Repository Pattern</li>
+                            <li>Meningkatkan moral tim 40% melalui mentoring</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <section id="certification">
-      <h2>Certification</h2>
-      <ul>
-        <li>Junior Web Developer – BNSP (Badan Nasional Sertifikasi Profesi) 2022</li>
-        <li>Junior Mobile Developer – BNSP (Badan Nasional Sertifikasi Profesi) 2023</li>
-        <li>Web Developer – BNSP (Badan Nasional Sertifikasi Profesi) 2023</li>
-        <li>Bootcamp Frontend Developer – PT. Inosoft Trans Sistem 2022</li>
-        <li>Bootcamp Backend Developer – PT. Inosoft Trans Sistem 2023</li>
-        <li>AWS Cloud Engineer – Digital Talent Scholarship 2022</li>
-        <li>Machine Learning – Digital Talent Scholarship 2022</li>
-        <li>Junior Web Developer – Digital Talent Scholarship 2022</li>
-        <li>Junior Mobile Developer – Digital Talent Scholarship 2023</li>
-        <li>Web Developer – Indosat Ooredoo (IDCAMP) 2022</li>
-        <li>React JS – Indosat Ooredoo (IDCAMP) 2023</li>
-        <li>Machine Learning – Indosat Ooredoo (IDCAMP) 2023</li>
-        <li>Google IT Support – YPII (Yayasan Plan International Indonesia) 2022</li>
-        <li>Fullstack Developer – Surabaya Webtech 2023</li>
-        <li>Frontend Developer – Empower 2023</li>
-        <li>Digital Nation Ambassador – Daily Social 2023</li>
-        <li>Wirausaha Merdeka – Kampus Merdeka 2023</li>
-      </ul>
-    </section>
+                <!-- Experience 2 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Januari 2024 - Sekarang</span>
+                        <h4>Tech Educator</h4>
+                        <h5>SMK Annuqayah</h5>
+                        <ul>
+                            <li>Meningkatkan kompetensi siswa 30% dalam teknologi jaringan</li>
+                            <li>70% siswa berhasil magang di bidang relevan</li>
+                            <li>Meningkatkan engagement siswa 20%</li>
+                            <li>60% lulusan melanjutkan pendidikan tinggi IT</li>
+                        </ul>
+                    </div>
+                </div>
 
+                <!-- Experience 3 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Juni 2024 - November 2024</span>
+                        <h4>Data Analyst</h4>
+                        <h5>Disparekraf DKI Jakarta</h5>
+                        <ul>
+                            <li>Menganalisis data survei pariwisata skala besar</li>
+                            <li>Membuat visualisasi data untuk pengambilan keputusan</li>
+                            <li>Mengidentifikasi peluang peningkatan layanan pariwisata</li>
+                            <li>Mempercepat pengiriman insight data</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <section id="awards">
-      <h2>Awards</h2>
-      <ul>
-        <li>Best Response Intern In DOT</li>
-        <li>Winner IT Preneur And Web Programming</li>
-        <li>Group Champion Google IT Support</li>
-      </ul>
-    </section>
-
-    <section id="papers">
-      <h2>Papers</h2>
-      <ul>
-        <li>Enhancing Blockchain E-Voting Privacy and Integrity – SIET 2024</li>
-      </ul>
-    </section>
-
-    <section id="seminars">
-      <h2>Seminars & Webinars</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="img/seminar/uniba.jpg" class="card-img-top" alt="Seminar Uniba Madura">
-            <div class="card-body">
-              <h5 class="card-title">Innovation and Economic Opportunities in Business Digitalization</h5>
-              <p class="card-text">Speaker at seminar organized by Uniba Madura & Mambaul Hikmah Islamic Boarding
-                School.</p>
+                <!-- Experience 4 -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mei 2023 - Maret 2024</span>
+                        <h4>Fullstack Developer</h4>
+                        <h5>Lumira Software House</h5>
+                        <ul>
+                            <li>Mengembangkan aplikasi web dan mobile</li>
+                            <li>Meningkatkan performa backend 30%</li>
+                            <li>Mengoptimalkan database hingga 50% lebih cepat</li>
+                            <li>Menyelesaikan 10 proyek tepat waktu</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-6">
-          <div class="card h-100">
-            <img src="img/seminar/imsii.jpeg" class="card-img-top" alt="Webinar IMSII">
-            <div class="card-body">
-              <h5 class="card-title">Learning Data Analytics: From Zero to Hero</h5>
-              <p class="card-text">Speaker at webinar organized by IMSII (Indonesian Association of Information Systems
-                Students).</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
-      <h2>Skills</h2>
-      <div class="row g-4">
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Backend Development</h5>
-              <p class="card-text">Laravel, Express.js, CodeIgniter</p>
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Keahlian</h2>
+            <div class="row g-4">
+                <!-- Backend Development -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4>Backend Development</h4>
+                        <div class="mb-3">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%" data-skill="90%"></div>
+                            </div>
+                            <small>Native Programming, Laravel, Codeigniter, Express.js</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Development -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Frontend Development</h4>
+                        <div class="mb-3">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%" data-skill="85%"></div>
+                            </div>
+                            <small>Vue.js, React.js, Next.js, Flutter</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Data Science</h4>
+                        <div class="mb-3">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%" data-skill="80%"></div>
+                            </div>
+                            <small>Machine Learning, Python, Data Visualization</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>Cloud & DevOps</h4>
+                        <div class="mb-3">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%" data-skill="75%"></div>
+                            </div>
+                            <small>AWS, Docker, Kubernetes, CI/CD</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <div class="mb-3">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 70%" data-skill="70%"></div>
+                            </div>
+                            <small>User Research, Prototyping, Figma</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Management -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h4>Project Management</h4>
+                        <div class="mb-3">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%" data-skill="85%"></div>
+                            </div>
+                            <small>Agile, Scrum, Kanban, Jira</small>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Frontend Development</h5>
-              <p class="card-text">Vue.js, React.js, Next.js, Flutter</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Deployment & DevOps</h5>
-              <p class="card-text">Docker, Kubernetes, CI/CD, AWS</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="applications">
-      <h2>Applications Created</h2>
-      <div class="row g-4">
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="img/apps/garamina.png" class="card-img-top" alt="Garamina">
-            <div class="card-body">
-              <h5 class="card-title">Garamina Mobile</h5>
-              <p class="card-text">Attendance app with real-time location, fake GPS detection, and
-                one-account-per-device policy.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Proyek Unggulan</h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>E-Voting Blockchain</h4>
+                            <p>Aplikasi multi-platform voting menggunakan teknologi blockchain untuk integritas voting</p>
+                            <div>
+                                <span class="project-tag">Blockchain</span>
+                                <span class="project-tag">Web</span>
+                                <span class="project-tag">Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>SMS TNI AU</h4>
+                            <p>Sistem manajemen keamanan untuk Markas Besar TNI Angkatan Udara</p>
+                            <div>
+                                <span class="project-tag">Security</span>
+                                <span class="project-tag">Web</span>
+                                <span class="project-tag">Government</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>Survey App Disparekraf</h4>
+                            <p>Aplikasi survei pariwisata untuk DKI Jakarta dengan analisis data real-time</p>
+                            <div>
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Mobile</span>
+                                <span class="project-tag">Government</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>Alicornbot</h4>
+                            <p>Aplikasi robot trader membership dengan AI untuk prediksi pasar</p>
+                            <div>
+                                <span class="project-tag">AI</span>
+                                <span class="project-tag">Mobile</span>
+                                <span class="project-tag">Fintech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>Ketong Baca</h4>
+                            <p>Platform pembelajaran berbasis web dan mobile untuk siswa SD-SMA</p>
+                            <div>
+                                <span class="project-tag">Education</span>
+                                <span class="project-tag">Web</span>
+                                <span class="project-tag">Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>Siapp Bapenda</h4>
+                            <p>Aplikasi mobile pembayaran pajak untuk BAPENDA Jawa Timur</p>
+                            <div>
+                                <span class="project-tag">Fintech</span>
+                                <span class="project-tag">Mobile</span>
+                                <span class="project-tag">Government</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/paten.jpg" class="card-img-top" alt="Paten">
-            <div class="card-body">
-              <h5 class="card-title">Paten</h5>
-              <p class="card-text">Mobile application for fast vote counting in the 2024 election.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="img/apps/tallysheet.jpg" class="card-img-top" alt="Tally Sheet">
-            <div class="card-body">
-              <h5 class="card-title">Tally Sheet</h5>
-              <p class="card-text">Application for recording the movement of goods efficiently.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/hmiconnect.jpg" class="card-img-top" alt="HMI Connect">
-            <div class="card-body">
-              <h5 class="card-title">HMI Connect</h5>
-              <p class="card-text">Multi-platform app for HMI member management (web, Android, iOS).</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="img/apps/survei.png" class="card-img-top" alt="Survey App">
-            <div class="card-body">
-              <h5 class="card-title">Survey App</h5>
-              <p class="card-text">Survey app for tourist attractions by Disparekraf DKI Jakarta.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/evoting.jpg" class="card-img-top" alt="E-Voting">
-            <div class="card-body">
-              <h5 class="card-title">E-Voting</h5>
-              <p class="card-text">Multi-platform voting app using blockchain (web, Android, iOS).</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/smkabsensi.jpg" class="card-img-top" alt="SMK Absensi">
-            <div class="card-body">
-              <h5 class="card-title">SMK Absensi</h5>
-              <p class="card-text">Mobile-based attendance app for vocational schools.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/fptifinance.jpg" class="card-img-top" alt="FPTI Finance">
-            <div class="card-body">
-              <h5 class="card-title">FPTI Finance</h5>
-              <p class="card-text">Financial app for FPTI (Federasi Panjat Tebing Indonesia).</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/baba.jpg" class="card-img-top" alt="Baba">
-            <div class="card-body">
-              <h5 class="card-title">Baba</h5>
-              <p class="card-text">PPOB app for credit, data, electricity, PDAM, BPJS, games, and more.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/vivacosmetic.jpg" class="card-img-top" alt="Viva Cosmetic">
-            <div class="card-body">
-              <h5 class="card-title">E-commerce Viva Cosmetic</h5>
-              <p class="card-text">E-commerce platform for selling Viva cosmetic products.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="img/apps/alicorn.png" class="card-img-top" alt="Alicornbot">
-            <div class="card-body">
-              <h5 class="card-title">Alicornbot</h5>
-              <p class="card-text">Membership robot trader app with performance tracking.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/ketongbaca.jpg" class="card-img-top" alt="Ketong Baca">
-            <div class="card-body">
-              <h5 class="card-title">Ketong Baca</h5>
-              <p class="card-text">Reading module app for students (web and mobile).</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/siappbapenda.jpg" class="card-img-top" alt="Siapp Bapenda">
-            <div class="card-body">
-              <h5 class="card-title">Siapp Bapenda</h5>
-              <p class="card-text">Mobile taxation application for BAPENDA JATIM.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="img/apps/sms.png" class="card-img-top" alt="SMS">
-            <div class="card-body">
-              <h5 class="card-title">Security Management System (SMS)</h5>
-              <p class="card-text">Used at Indonesian Air Force HQ (Mabes TNI AU) for integrated security management.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card h-100">
-            <img src="images/amitie.jpg" class="card-img-top" alt="Amitie">
-            <div class="card-body">
-              <h5 class="card-title">Amitie</h5>
-              <p class="card-text">Vehicle tax payment agency application with reminder and tracking features.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section id="servers">
-      <h2>Servers Managed</h2>
-      <ul>
-        <li>LMS Lanud Soemarmo Solo</li>
-        <li>Alicorn Robot Trader</li>
-        <li>FPTI (Federasi Panjat Tebing Indonesia)</li>
-        <li>Instinc Technology Solution</li>
-        <li>Disparekraf DKI Jakarta</li>
-      </ul>
+    <!-- Certifications & Awards -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Sertifikasi & Penghargaan</h2>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="mb-4">Sertifikasi Profesional</h3>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-certificate text-primary me-3"></i>
+                                <span>Junior Web Developer (BNSP)</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-certificate text-primary me-3"></i>
+                                <span>Junior Mobile Developer (BNSP)</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-certificate text-primary me-3"></i>
+                                <span>AWS Cloud Engineer</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-certificate text-primary me-3"></i>
+                                <span>Machine Learning</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-certificate text-primary me-3"></i>
+                                <span>Google IT Support</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-certificate text-primary me-3"></i>
+                                <span>Fullstack Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">Penghargaan & Paper</h3>
+                    <div class="custom-card p-4 mb-4">
+                        <h5><i class="fas fa-trophy text-warning me-2"></i>Best Response Intern In DOT</h5>
+                        <h5><i class="fas fa-trophy text-warning me-2"></i>Winner IT Preneur And Web Programming</h5>
+                        <h5><i class="fas fa-trophy text-warning me-2"></i>Group Champion Google IT Support</h5>
+                        <h5><i class="fas fa-file-alt text-info me-2"></i>Enhancing Blockchain E-Voting Privacy (SIET 2024)</h5>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Bagus Untoro. All rights reserved.</p>
-  </footer>
+    <!-- Papers & Seminars Section -->
+    <section id="papers-seminars" class="bg-light">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Publikasi & Seminar</h2>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Papers Subsection -->
+            <div class="mb-5">
+                <h3 class="text-center mb-4" data-aos="fade-up">Paper Ilmiah</h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" data-aos="fade-up">
+                        <div class="custom-card">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-box bg-primary bg-gradient text-white rounded-circle p-3 me-3">
+                                    <i class="fas fa-file-alt fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Enhancing Blockchain E-Voting Privacy and Integrity Through Voter Anonymity and E-KTP Integration</h5>
+                                    <small class="text-muted">SIET 2024</small>
+                                </div>
+                            </div>
+                            <p class="mb-3">Paper ini membahas pengembangan sistem e-voting berbasis blockchain yang mengintegrasikan anonimitas pemilih dengan E-KTP untuk meningkatkan privasi dan integritas dalam proses pemungutan suara elektronik.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-primary me-2">Blockchain</span>
+                                    <span class="badge bg-success me-2">E-Voting</span>
+                                    <span class="badge bg-info">E-KTP Integration</span>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-external-link-alt me-1"></i> Lihat Paper
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seminars Subsection -->
+            <div>
+                <h3 class="text-center mb-4" data-aos="fade-up">Seminar & Webinar</h3>
+                <div class="row g-4">
+                    <!-- Seminar 1 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="custom-card seminar-card h-100">
+                            <div class="seminar-img-container">
+                                <img src="img/uniba/1.jpg" class="seminar-img" alt="Seminar 1">
+                                <div class="seminar-overlay">
+                                    <button class="btn btn-light view-photos" data-bs-toggle="modal" data-bs-target="#seminar1Modal">
+                                        <i class="fas fa-images me-2"></i>Lihat Foto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Innovation and Economic Opportunities in Business Digitalization</h5>
+                                <p class="card-text"><small class="text-muted">Himpunan Mahasiswa Sistem Informasi Uniba Madura</small></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Speaker</span>
+                                    <small class="text-muted">2024</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seminar 2 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="custom-card seminar-card h-100">
+                            <div class="seminar-img-container">
+                                <img src="img/imsii/1.jpg" class="seminar-img" alt="Seminar 2">
+                                <div class="seminar-overlay">
+                                    <button class="btn btn-light view-photos" data-bs-toggle="modal" data-bs-target="#seminar2Modal">
+                                        <i class="fas fa-images me-2"></i>Lihat Foto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Learning Data Analytics: From Zero to Hero</h5>
+                                <p class="card-text"><small class="text-muted">IMSII (Ikatan Mahasiswa Sistem Informasi Indonesia)</small></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Speaker</span>
+                                    <small class="text-muted">2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seminar 3 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="custom-card seminar-card h-100">
+                            <div class="seminar-img-container">
+                                <img src="img/dentech/1.jpg" class="seminar-img" alt="Seminar 3">
+                                <div class="seminar-overlay">
+                                    <button class="btn btn-light view-photos" data-bs-toggle="modal" data-bs-target="#seminar3Modal">
+                                        <i class="fas fa-images me-2"></i>Lihat Foto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Managing and Integrating MySQL Databases</h5>
+                                <p class="card-text"><small class="text-muted">DenTech Corporation</small></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Speaker</span>
+                                    <small class="text-muted">2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seminar 4 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="custom-card seminar-card h-100">
+                            <div class="seminar-img-container">
+                                <img src="img/engineering-edu/1.jpeg" class="seminar-img" alt="Seminar 4">
+                                <div class="seminar-overlay">
+                                    <button class="btn btn-light view-photos" data-bs-toggle="modal" data-bs-target="#seminar4Modal">
+                                        <i class="fas fa-images me-2"></i>Lihat Foto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Fullstack Development Workflow</h5>
+                                <p class="card-text"><small class="text-muted">EngineeringEdu</small></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Speaker</span>
+                                    <small class="text-muted">2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seminar 5 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+                        <div class="custom-card seminar-card h-100">
+                            <div class="seminar-img-container">
+                                <img src="img/uinsa/1.jpeg" class="seminar-img" alt="Seminar 5">
+                                <div class="seminar-overlay">
+                                    <button class="btn btn-light view-photos" data-bs-toggle="modal" data-bs-target="#seminar5Modal">
+                                        <i class="fas fa-images me-2"></i>Lihat Foto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Dasar Data Analyst</h5>
+                                <p class="card-text"><small class="text-muted">Universitas Islam Negeri Sunan Ampel Surabaya</small></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Speaker</span>
+                                    <small class="text-muted">2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seminar 6 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+                        <div class="custom-card seminar-card h-100">
+                            <div class="seminar-img-container">
+                                <img src="img/dentech/2.png" class="seminar-img" alt="Seminar 6">
+                                <div class="seminar-overlay">
+                                    <button class="btn btn-light view-photos" data-bs-toggle="modal" data-bs-target="#seminar6Modal">
+                                        <i class="fas fa-images me-2"></i>Lihat Foto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Keamanan API dengan JWT dan Enkripsi Data</h5>
+                                <p class="card-text"><small class="text-muted">DenTech Corporation</small></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Speaker</span>
+                                    <small class="text-muted">2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title text-center text-white" data-aos="fade-up">Hubungi Saya</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card" data-aos="fade-up">
+                        <div class="contact-info">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h5>Telepon</h5>
+                                <p>+62 819-0715-0504</p>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>untorobagus65@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Lokasi</h5>
+                                <p>Sumenep, Jawa Timur</p>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h5>LinkedIn</h5>
+                                <p>linkedin.com/in/bagus-itdev</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="mailto:untorobagus65@gmail.com" class="btn btn-light btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Kirim Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Seminar Photos -->
+    <!-- Seminar 1 Modal -->
+    <div class="modal fade" id="seminar1Modal" tabindex="-1" aria-labelledby="seminar1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seminar1ModalLabel">Innovation and Economic Opportunities in Business Digitalization</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seminar1Carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#seminar1Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#seminar1Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/uniba/1.jpg" class="d-block w-100" alt="Seminar 1 Photo 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Foto Bersama</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/uniba/2.jpg" class="d-block w-100" alt="Seminar 1 Photo 2">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Pemberian Sertifikat</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#seminar1Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#seminar1Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seminar 2 Modal -->
+    <div class="modal fade" id="seminar2Modal" tabindex="-1" aria-labelledby="seminar2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seminar2ModalLabel">Learning Data Analytics: From Zero to Hero</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seminar2Carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#seminar2Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/imsii/1.jpg" class="d-block w-100" alt="Seminar 2 Photo 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Poster Acara</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#seminar2Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#seminar2Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seminar 3 Modal -->
+    <div class="modal fade" id="seminar3Modal" tabindex="-1" aria-labelledby="seminar3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seminar3ModalLabel">Managing and Integrating MySQL Databases</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seminar3Carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#seminar3Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/dentech/1.jpg" class="d-block w-100" alt="Seminar 3 Photo 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Poster Acara</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#seminar3Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#seminar3Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seminar 4 Modal -->
+    <div class="modal fade" id="seminar4Modal" tabindex="-1" aria-labelledby="seminar4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seminar4ModalLabel">Fullstack Development Workflow</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seminar4Carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#seminar4Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/engineering-edu/1.jpeg" class="d-block w-100" alt="Seminar 4 Photo 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Poster Acara</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#seminar4Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#seminar4Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seminar 5 Modal -->
+    <div class="modal fade" id="seminar5Modal" tabindex="-1" aria-labelledby="seminar5ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seminar5ModalLabel">Dasar Data Analyst</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seminar5Carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#seminar5Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#seminar5Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/uinsa/2.jpeg" class="d-block w-100" alt="Seminar 5 Photo 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Pemberian Sertifikat</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/uinsa/1.jpeg" class="d-block w-100" alt="Seminar 5 Photo 2">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Saat Menjelaskan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#seminar5Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#seminar5Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seminar 6 Modal -->
+    <div class="modal fade" id="seminar6Modal" tabindex="-1" aria-labelledby="seminar6ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seminar6ModalLabel">Keamanan API dengan JWT dan Enkripsi Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seminar6Carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#seminar6Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/dentech/2.png" class="d-block w-100" alt="Seminar 6 Photo 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Poster Acara</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#seminar6Carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#seminar6Carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bagus Untoro. All rights reserved. | Designed with <i class="fas fa-heart text-danger"></i> by Portfolio</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            disable: 'mobile'
+        });
+
+        // Hide loader when page is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const darkModeIcon = darkModeToggle.querySelector('i');
+
+        // Check for saved user preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeIcon.classList.remove('fa-moon');
+            darkModeIcon.classList.add('fa-sun');
+        }
+
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                darkModeIcon.classList.remove('fa-moon');
+                darkModeIcon.classList.add('fa-sun');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeIcon.classList.remove('fa-sun');
+                darkModeIcon.classList.add('fa-moon');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Progress bar animation
+        const progressBars = document.querySelectorAll('.progress-bar');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const progressObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const width = progressBar.style.width;
+                    progressBar.style.width = '0';
+                    setTimeout(() => {
+                        progressBar.style.width = width;
+                    }, 100);
+                }
+            });
+        }, observerOptions);
+
+        progressBars.forEach(bar => {
+            progressObserver.observe(bar);
+        });
+
+        // Active navigation link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 
 </html>
