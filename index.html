@@ -19,910 +19,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #10b981;
-            --accent: #f59e0b;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --darker: #0f172a;
-            --gradient: linear-gradient(135deg, #2563eb, #10b981);
-            --text: #334155;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text);
-            overflow-x: hidden;
-            background-color: #f1f5f9;
-            line-height: 1.6;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary);
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            padding: 15px 0;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .nav-link {
-            color: var(--dark) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            padding: 8px 16px !important;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary) !important;
-            background-color: rgba(37, 99, 235, 0.1);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 4px 8px;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            color: var(--dark);
-            cursor: pointer;
-            margin-left: 10px;
-            padding: 8px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .dark-mode-toggle:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 100px 0 50px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-img-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-
-        .profile-img-container:hover .profile-img {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .profile-img-container::after {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero .lead {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .hero-description {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 25px;
-            margin-top: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border-radius: 50%;
-            margin: 0 10px;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .social-links a:hover {
-            background: white;
-            color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            position: relative;
-            display: inline-block;
-            color: var(--dark);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 4px;
-            background: var(--gradient);
-            bottom: -10px;
-            left: 0;
-            border-radius: 2px;
-        }
-
-        .text-center .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Cards */
-        .custom-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: all 0.3s ease;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .custom-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-        }
-
-        .custom-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: var(--gradient);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 40px;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 40px;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            position: relative;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            top: 25px;
-            border: 4px solid white;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd)::before {
-            right: -10px;
-        }
-
-        .timeline-item:nth-child(even)::before {
-            left: -10px;
-        }
-
-        .timeline-date {
-            background: var(--gradient);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .timeline-content h4 {
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-
-        .timeline-content h5 {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .timeline-content ul {
-            padding-left: 20px;
-            margin-bottom: 0;
-        }
-
-        .timeline-content li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 5px;
-        }
-
-        /* Skills */
-        .skill-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            height: 100%;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
-
-        .skill-card h4 {
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-
-        .progress {
-            height: 10px;
-            border-radius: 10px;
-            background: #e2e8f0;
-            overflow: visible;
-            margin-bottom: 10px;
-        }
-
-        .progress-bar {
-            background: var(--gradient);
-            border-radius: 10px;
-            position: relative;
-            overflow: visible;
-        }
-
-        .progress-bar::after {
-            content: attr(data-skill);
-            position: absolute;
-            right: 0;
-            top: -25px;
-            background: var(--dark);
-            color: white;
-            padding: 2px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* Projects */
-        .project-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-img {
-            height: 200px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-img::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        .project-img i {
-            position: relative;
-            z-index: 2;
-        }
-
-        .project-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-content h4 {
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .project-content p {
-            color: var(--text);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .project-tag {
-            display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin: 0 5px 5px 0;
-            font-weight: 500;
-        }
-
-        /* Papers & Seminars Section */
-        .seminar-img-container {
-            position: relative;
-            overflow: hidden;
-            height: 200px;
-        }
-
-        .seminar-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .seminar-card:hover .seminar-img {
-            transform: scale(1.05);
-        }
-
-        .seminar-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .seminar-card:hover .seminar-overlay {
-            opacity: 1;
-        }
-
-        .view-photos {
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
-
-        .seminar-card:hover .view-photos {
-            transform: translateY(0);
-        }
-
-        .icon-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-        }
-
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        /* Contact */
-        .contact-section {
-            background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
-            color: white;
-            position: relative;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,133.3C960,128,1056,96,1152,90.7C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            z-index: 1;
-        }
-
-        .contact-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding: 15px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .contact-info:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .contact-info i {
-            font-size: 1.5rem;
-            margin-right: 20px;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-info h5 {
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .contact-info p {
-            margin-bottom: 0;
-            opacity: 0.9;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--darker);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        /* Loading Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-circle {
-            width: 60px;
-            height: 60px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-
-        .loader-text {
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--gradient);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 99;
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-
-        body.dark-mode .navbar {
-            background: rgba(15, 23, 42, 0.95);
-        }
-
-        body.dark-mode .nav-link {
-            color: #e2e8f0 !important;
-        }
-
-        body.dark-mode .nav-link:hover,
-        body.dark-mode .nav-link.active {
-            color: #60a5fa !important;
-            background-color: rgba(96, 165, 250, 0.1);
-        }
-
-        body.dark-mode .section-title {
-            color: #e2e8f0;
-        }
-
-        body.dark-mode .custom-card,
-        body.dark-mode .timeline-content,
-        body.dark-mode .skill-card,
-        body.dark-mode .project-card {
-            background: #1e293b;
-            border-color: rgba(71, 85, 105, 0.5);
-            color: #e2e8f0;
-        }
-
-        body.dark-mode .timeline-content h4,
-        body.dark-mode .skill-card h4,
-        body.dark-mode .project-content h4 {
-            color: #e2e8f0;
-        }
-
-        body.dark-mode .timeline-content h5 {
-            color: #60a5fa;
-        }
-
-        body.dark-mode .project-content p {
-            color: #cbd5e1;
-        }
-
-        body.dark-mode .progress {
-            background: #334155;
-        }
-
-        body.dark-mode .contact-info {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        body.dark-mode .contact-info:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        body.dark-mode .project-tag {
-            background: rgba(96, 165, 250, 0.1);
-            color: #60a5fa;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero .lead {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 80px 0 50px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero .lead {
-                font-size: 1.1rem;
-            }
-
-            .profile-img {
-                width: 180px;
-                height: 180px;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 50px !important;
-                padding-right: 0 !important;
-                left: 0 !important;
-            }
-
-            .timeline-item::before {
-                left: 10px !important;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero .lead {
-                font-size: 1rem;
-            }
-
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .hero-description {
-                padding: 20px;
-            }
-
-            .social-links a {
-                width: 45px;
-                height: 45px;
-                margin: 0 5px;
-                font-size: 1rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-info i {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <audio id="musik" loop>
+        <source src="manusia_kuat.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung pemutar audio.
+    </audio>
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-circle"></div>
@@ -1056,7 +160,7 @@
                     <div class="timeline-content">
                         <span class="timeline-date">Juni 2024 - November 2024</span>
                         <h4>Data Analyst</h4>
-                        <h5>Disparekraf DKI Jakarta</h5>
+                        <h5>Survei Pariwisata Disparekraf DKI Jakarta</h5>
                         <ul>
                             <li>Menganalisis data survei pariwisata skala besar</li>
                             <li>Membuat visualisasi data untuk pengambilan keputusan</li>
@@ -1572,6 +676,28 @@
             <div>
                 <h3 class="text-center mb-4" data-aos="fade-up">Seminar & Webinar</h3>
                 <div class="row g-4">
+                    <!-- Seminar 7 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+                        <div class="custom-card seminar-card h-100">
+                            <div class="seminar-img-container">
+                                <img src="img/engineering-edu/1.jpg" class="seminar-img" alt="Seminar 6">
+                                <div class="seminar-overlay">
+                                    <button class="btn btn-light view-photos" data-bs-toggle="modal"
+                                        data-bs-target="#seminar7Modal">
+                                        <i class="fas fa-images me-2"></i>Lihat Foto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Dasar Praktek dan Implementasi Database MySQL Pada Aplikasi PHP</h5>
+                                <p class="card-text"><small class="text-muted">Education Engineering</small></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Speaker</span>
+                                    <small class="text-muted">2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Seminar 6 -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
                         <div class="custom-card seminar-card h-100">
@@ -1585,7 +711,8 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Implementing JWT Authentication & Data Encryption Using MySQL, Laravel, JWT, and Postman</h5>
+                                <h5 class="card-title">Implementing JWT Authentication & Data Encryption Using MySQL,
+                                    Laravel, JWT, and Postman</h5>
                                 <p class="card-text"><small class="text-muted">DenTech Corporation</small></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="badge bg-primary">Speaker</span>
@@ -1617,7 +744,7 @@
                             </div>
                         </div>
                     </div>
-                     <!-- Seminar 4 -->
+                    <!-- Seminar 4 -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                         <div class="custom-card seminar-card h-100">
                             <div class="seminar-img-container">
@@ -1709,15 +836,15 @@
                         </div>
                     </div>
 
-                    
 
-                    
 
-                   
 
-                    
 
-                    
+
+
+
+
+
                 </div>
             </div>
         </div>
@@ -2033,10 +1160,51 @@
         </div>
     </div>
 
+    <!-- Seminar 7 Modal -->
+    <div class="modal fade" id="seminar7Modal" tabindex="-1" aria-labelledby="seminar7ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seminar7ModalLabel">>Dasar Praktek dan Implementasi Database MySQL Pada Aplikasi PHP</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="seminar6Carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#seminar6Carousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/engineering-edu/1.jpg" class="d-block w-100" alt="Seminar 6 Photo 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p>Poster Acara</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#seminar6Carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#seminar6Carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Bagus Untoro. All rights reserved. | Designed with <i class="fas fa-heart text-danger"></i>
+            <p>&copy; 2025 Bagus Untoro. All rights reserved. | Designed with <i class="fas fa-heart text-danger"></i>
                 by Portfolio</p>
         </div>
     </footer>
@@ -2049,136 +1217,16 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            disable: 'mobile'
-        });
-
-        // Hide loader when page is loaded
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                document.getElementById('loader').classList.add('hidden');
-            }, 500);
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.padding = '10px 0';
-                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.padding = '15px 0';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
-            }
-        });
-
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-        const darkModeIcon = darkModeToggle.querySelector('i');
-
-        // Check for saved user preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            darkModeIcon.classList.remove('fa-moon');
-            darkModeIcon.classList.add('fa-sun');
-        }
-
-        darkModeToggle.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                darkModeIcon.classList.remove('fa-moon');
-                darkModeIcon.classList.add('fa-sun');
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                darkModeIcon.classList.remove('fa-sun');
-                darkModeIcon.classList.add('fa-moon');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Progress bar animation
-        const progressBars = document.querySelectorAll('.progress-bar');
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const progressObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBar = entry.target;
-                    const width = progressBar.style.width;
-                    progressBar.style.width = '0';
-                    setTimeout(() => {
-                        progressBar.style.width = width;
-                    }, 100);
-                }
-            });
-        }, observerOptions);
-
-        progressBars.forEach(bar => {
-            progressObserver.observe(bar);
-        });
-
-        // Active navigation link
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // Coba langsung play (kalau diizinkan browser)
+        const musik = document.getElementById('musik');
+        musik.play().catch(() => {
+            // Jika autoplay gagal, tunggu interaksi user
+            document.body.addEventListener('click', () => {
+                musik.play();
+            }, { once: true });
         });
     </script>
 </body>
